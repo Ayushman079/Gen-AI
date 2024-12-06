@@ -270,13 +270,13 @@ td:nth-child(1) {
   color: #fafafaf5;
 }
 
-h1::after {
+/* h1::after {
   content: "";
   display: block;
   width: 250px;
   border-bottom: 2px dashed #fbfd6e; /* Dashed line */
   margin: 10px auto;
-}
+} */
 
 
 .Description {
