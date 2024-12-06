@@ -1,0 +1,22 @@
+
+
+
+
+
+// DATA TO INSERT INTO THE TABLE 
+INSERT INTO brand (id, name) VALUES
+  (1, 'Haldiram'),
+  (2, 'Britannia'),
+  (3, 'Parle');
+
+INSERT INTO city (id, name, brand_id) VALUES
+  (1, 'Delhi', 1),
+  (2, 'Mumbai', 1),
+  (3, 'Bangalore', 2),
+  (4, 'Chennai', 3);
+
+INSERT INTO unavailable_item (id, name, reason, city_id) VALUES
+  (1, 'Haldiram Aloo Bhujia', 'Out of stock', 1),
+  (2, 'Britannia Good Day Biscuits', 'Discontinued', 2),
+  (3, 'Parle Monaco Biscuits', 'Damaged', 3),
+  (4, 'Haldiram Gulab Jamun', 'Not available', 4);
