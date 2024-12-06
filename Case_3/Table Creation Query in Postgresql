@@ -1,22 +1,40 @@
+// QUERY TO CREATE TABLE
+CREATE TABLE brand (
+  id INT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE city (
+  id INT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  brand_id INT,
+  FOREIGN KEY (brand_id) REFERENCES brand(id)
+);
+
+CREATE TABLE unavailable_items (
+  id INT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  reason VARCHAR(255) NOT NULL,
+  city_id INT,
+  FOREIGN KEY (brand_id) REFERENCES brand(id),
+  FOREIGN KEY (city_id) REFERENCES city(id)
+);
 
 
-
-
-
-// DATA TO INSERT INTO THE TABLE 
+// QUERY TO INSERT DATA INTO THE TABLE
 INSERT INTO brand (id, name) VALUES
-  (1, 'Haldiram'),
-  (2, 'Britannia'),
-  (3, 'Parle');
+  (1, 'Brand A'),
+  (2, 'Brand B'),
+  (3, 'Brand C');
 
 INSERT INTO city (id, name, brand_id) VALUES
-  (1, 'Delhi', 1),
-  (2, 'Mumbai', 1),
-  (3, 'Bangalore', 2),
-  (4, 'Chennai', 3);
+  (1, 'City A', 1),
+  (2, 'City B', 1),
+  (3, 'City C', 2),
+  (4, 'City D', 3);
 
 INSERT INTO unavailable_item (id, name, reason, city_id) VALUES
-  (1, 'Haldiram Aloo Bhujia', 'Out of stock', 1),
-  (2, 'Britannia Good Day Biscuits', 'Discontinued', 2),
-  (3, 'Parle Monaco Biscuits', 'Damaged', 3),
-  (4, 'Haldiram Gulab Jamun', 'Not available', 4);
+  (1, 'Item A', 'Out of stock', 1),
+  (2, 'Item B', 'Discontinued',2),
+  (3, 'Item C', 'Damaged', 3),
+  (4, 'Item D', 'Not available', 4);
