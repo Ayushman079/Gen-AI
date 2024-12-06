@@ -1,26 +1,3 @@
-// QUERY TO CREATE TABLE
-CREATE TABLE brand (
-  id INT PRIMARY KEY,
-  name VARCHAR(255) NOT NULL
-);
-
-CREATE TABLE city (
-  id INT PRIMARY KEY,
-  name VARCHAR(255) NOT NULL,
-  brand_id INT,
-  FOREIGN KEY (brand_id) REFERENCES brand(id)
-);
-
-CREATE TABLE unavailable_items (
-  id INT PRIMARY KEY,
-  name VARCHAR(255) NOT NULL,
-  reason VARCHAR(255) NOT NULL,
-  city_id INT,
-  FOREIGN KEY (brand_id) REFERENCES brand(id),
-  FOREIGN KEY (city_id) REFERENCES city(id)
-);
-
-
 // QUERY TO INSERT DATA INTO THE TABLE
 INSERT INTO brand (id, name) VALUES
   (1, 'Brand A'),
