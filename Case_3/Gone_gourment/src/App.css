@@ -274,7 +274,7 @@ td:nth-child(1) {
   content: "";
   display: block;
   width: 250px;
-  border-bottom: 2px dashed #fbfd6e; /* Dashed line */
+  border-bottom: 2px dashed #fbfd6e; 
   margin: 10px auto;
 } */
 
