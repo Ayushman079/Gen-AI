@@ -1,3 +1,4 @@
+//Create Query
 CREATE TABLE Promotion (
   id Bigint PRIMARY KEY,
   promotionName VARCHAR(255) NOT NULL,
@@ -17,3 +18,47 @@ CREATE TABLE Locations (
   PRIMARY KEY (promotionId, location),
   CONSTRAINT fk_promotion_id FOREIGN KEY (promotionId) REFERENCES Promotion(id)
 );
+
+//Insert Query
+INSERT INTO Promotion (id, promotionName, country)
+VALUES
+  (1, 'Holiday Discount', 'India'),
+  (2, 'Mega Sale Discount', 'India'),
+  (3, 'Summer Sale 2025', 'USA'),
+  (4, 'Student Discount', 'USA'),
+  (5, 'Fiesta Mexicana 2025', 'Mexico');
+ 
+INSERT INTO Locations (promotionId, location)
+VALUES
+  (1, 'Hyderabad'),
+  (1, 'Warangal'),
+  (2, 'Gorakhpur'),
+  (3, 'New York'),
+  (3, 'Los Angeles'),
+  (3, 'Miami'),
+  (4, 'Los Angeles'),
+  (4, 'Boston'),
+  (4, 'New York'),
+  (4, 'Toronto'),
+  (5, 'Puebla'),
+  (5, 'Cancún'),
+  (5, 'Monterrey'),
+  (5, 'Guadalajara'),
+  (5, 'Mexico City');
+ 
+INSERT INTO TermsOfUse (promotionId, term)
+VALUES
+  (1, 'Applies only if total bill is more than 2999/-Rs'),
+  (2, 'Minimum purchase should be 4999/-Rs'),
+  (2, 'Applies only on the selected products'),
+  (3, 'Offer valid from June 1, 2025 to August 31, 2025.'),
+  (3, 'Discounts are applicable on selected items only.'),
+  (3, 'Cannot be combined with other promotions or discounts.'),
+  (3, 'Available only at participating locations.'),
+  (3, 'No cash value or exchanges allowed.'),
+  (4, '10% Off for Students'),
+  (4, 'Offer available to all students with a valid student ID.'),
+  (4, 'Limit one use per student ID.'),
+  (4, 'Available only at participating locations.'),
+  (3, 'Get 20% off all items in-store and online.'),
+  (3, 'Discount applies to full-priced items only; excludes clearance items.');
